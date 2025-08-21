@@ -30,4 +30,4 @@ Una pizarra de notas estilo post-it con diseño indie, animaciones y guardado lo
 1. Clonar el repositorio:
 
 ```bash
-git clone https://github.com/Ericolink/tudu.git
+git clone https://github.com/Ericolink/TU-DU.git

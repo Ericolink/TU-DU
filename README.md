@@ -26,7 +26,7 @@ Una pizarra de notas estilo post-it con diseño indie, animaciones y guardado lo
 
 ---
 
-## 🛠 Créditos
+## Créditos
 
 - **Desarrollo:** Ericolink  
 - **Logo e ilustraciones:** Starbxby.art

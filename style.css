@@ -162,7 +162,7 @@ main {
   transform: translateX(-50%);
   width: 22px;
   height: 22px;
-  background: url("pin.png") no-repeat center/contain;
+  background: url("pin.PNG") no-repeat center/contain;
 }
 
 /* ===================== TABLERO ===================== */

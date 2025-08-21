@@ -50,7 +50,7 @@ function loadNotes() {
     const div = document.createElement("div");
     div.className = "note";
     div.innerHTML = `
-       <img class="pin" src="assets/pin.png" alt="tachuela" onclick="deleteNote(${start + index})">
+      <img class="pin" src="assets/pin.PNG" alt="tachuela" onclick="deleteNote(${start + index})">
       <h4>${note.title}</h4>
       <p>${note.desc}</p>
     `;

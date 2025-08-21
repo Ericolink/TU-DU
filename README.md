@@ -21,13 +21,26 @@ Una pizarra de notas estilo post-it con diseño indie, animaciones y guardado lo
 - HTML5  
 - CSS3 (Flexbox, Grid, Gradientes, Animaciones)  
 - JavaScript (vanilla)  
-- Assets: imágenes, iconos SVG para tachuelas y logo
+- Assets: imágenes, iconos PNG y SVG
+- LocalStorage para guardar notas en el navegador
 
 ---
 
-## Cómo usar / probar el proyecto
+## 🛠 Créditos
 
-1. Clonar el repositorio:
+- **Desarrollo:** Ericolink  
+- **Logo e ilustraciones:** Starbxby.art
+
+---
+## Notas
+
+- La aplicación es completamente **frontend** y no requiere backend.
+- Las notas se almacenan localmente en el navegador usando **LocalStorage**.
+- Compatible con la mayoría de navegadores modernos.
+---
+
+## Clonar el repositorio:
 
 ```bash
 git clone https://github.com/Ericolink/TU-DU.git
+

@@ -31,10 +31,10 @@ main {
 
 /* Logo dentro del popup */
 .popup-logo {
-  width: 200px;          /* tamaño ajustable */
+  width: 200px;          
   height: auto;
   display: block;
-  margin: 0 auto 15px auto; /* centrado y separación debajo */
+  margin: 0 auto 15px auto; 
 }
 
 
@@ -175,7 +175,7 @@ main {
   align-items: center;
   gap: 15px;
   flex-wrap: wrap;
-  min-height: calc(90vh - 110px); /* espacio mínimo para que el footer no suba */
+  min-height: calc(90vh - 110px); 
 }
 
 #board {
@@ -185,11 +185,11 @@ main {
   width: 95%;
   max-width: 1000px;
   min-height: 500px;
-  background-color: #d4a373; /* color base corcho */
+  background-color: #d4a373; 
   
   /* textura de corcho */
-  background-image: url('assets/corcho.jpg'); /* tu archivo de corcho */
-  background-size: cover;   /* cubre todo el tablero */
+  background-image: url('assets/corcho.jpg'); 
+  background-size: cover;   
   background-repeat: no-repeat;
   background-position: center;
   
@@ -264,8 +264,8 @@ main {
   left: 50%;
   transform: translateX(-50%) rotate(-5deg);
   position: absolute;
-  pointer-events: auto; /* permitir click */
-  cursor: pointer;      /* cambia el cursor al pasar sobre la tachuela */
+  pointer-events: auto; 
+  cursor: pointer;     
   transition: transform 0.2s;
 }
 
@@ -278,7 +278,7 @@ main {
   position: absolute;
   top: 8px;
   right: 8px;
-  background: linear-gradient(135deg, #ff6b6b, #ff4c4c); /* rojo degradado */
+  background: linear-gradient(135deg, #ff6b6b, #ff4c4c); 
   border: none;
   padding: 5px 10px;
   border-radius: 6px;
@@ -349,7 +349,7 @@ footer {
 }
 
 .footer-logo {
-    height: 100px; /* Ajusta el tamaño según necesites */
+    height: 100px; 
     width: auto;
 }
 
@@ -368,7 +368,7 @@ footer {
 
 .footer-text a:hover {
     transform: scale(1.1);
-    color: #ffda47; /* cambio de color al pasar el mouse */
+    color: #ffda47; 
 }
 
 .github-icon {

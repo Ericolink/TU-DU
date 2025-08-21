@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TU-DU</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="assets/logo.PNG" />
+</head>
+
+
+<body>
+    <!-- Pop-up de inicio -->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <img src="assets/logo.PNG" alt="Logo" class="popup-logo">
+            <h2>Bienvenido a TU-DU</h2>
+            <p>Desarrollado por Ericolink <a href="https://github.com/Ericolink" ><img class="github-icon" src="assets/github-mark.svg" alt="Github"></a></p>
+            <p>Ilustraciones por Starbxby.art <a href="https://www.instagram.com/starbxby.art/" ><img class="github-icon" src="assets/Instagram_logo_2022.svg.png"></a></p>
+            <button id="closePopup">Cerrar</button>
+        </div>
+    </div>
+    
+    <!-- Pantalla principal -->
+    <main>
+        <section id="new-note">
+            <h3>New TU-DU</h3>
+            <input type="text" id="noteTitle" placeholder="Titulo...">
+            <textarea id="noteDesc" placeholder="Descripción..."></textarea>
+            <button id="saveNote">Guardar TU-DU</button>
+        </section>
+
+        
+        <section id="boardContainer">
+            <section id="board">
+                <h3>Mis TU-DU</h3>
+                <div id="notesContainer" class="notes-container"></div>
+            </section>
+
+            <!-- Flechas de navegación debajo del tablero, dentro de un contenedor del mismo ancho -->
+            <div id="boardNavigationContainer">
+                <div id="boardNavigation">
+                    <button id="prevBoard" class="board-arrow">⬅</button>
+                    <button id="nextBoard" class="board-arrow">➡</button>
+                </div>
+            </div>
+</section>
+</section>
+
+
+    </main>
+
+    <script src="app.js"></script>
+</body>
+<footer>
+    <div class="footer-content">
+        
+        <img src="assets/logo.PNG" alt="Logo" class="footer-logo">
+        
+        <div class="footer-text">
+            <p>© 2025 TU-DU</p>
+        </div>
+        
+        <div class="footer-text">
+            <p>Desarrollado por Ericolink <a href="https://github.com/Ericolink" ><img class="github-icon" src="assets/github-mark.svg" alt="Github"></a></p>
+            <p>Ilustraciones por Starbxby.art <a href="https://www.instagram.com/starbxby.art/" ><img class="github-icon" src="assets/Instagram_logo_2022.svg.png"></a></p>
+        </div>
+
+        <div></div>
+        
+        <div class="footer-text">
+            <p>¡Gracias por usar TU-DU!</p>
+            <p>Mantén tus notas organizadas 😉</p>
+        </div>
+    </div>
+</footer>
+
+
+
+
+</html>

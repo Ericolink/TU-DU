@@ -1,0 +1,405 @@
+/* ===================== GENERAL ===================== */
+body {
+  font-family: 'Arial', sans-serif;
+  background: #cbe6f3;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px;
+  flex-wrap: wrap;
+}
+
+/* ===================== POP-UP ===================== */
+/* Fondo del pop-up */
+.popup {
+  position: fixed;
+  top: 0; 
+  left: 0;
+  width: 100%; 
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(3px);
+}
+
+/* Logo dentro del popup */
+.popup-logo {
+  width: 200px;          /* tamaño ajustable */
+  height: auto;
+  display: block;
+  margin: 0 auto 15px auto; /* centrado y separación debajo */
+}
+
+
+/* Contenido del pop-up */
+.popup-content {
+  background: linear-gradient(145deg, #fff8b0, #fff1a8);
+  padding: 30px 40px;
+  text-align: center;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4), inset 0 0 15px rgba(255,255,255,0.3);
+  position: relative;
+  width: 300px;
+  max-width: 90%;
+  animation: popupAppear 0.5s ease-out;
+}
+
+/* Título y texto del pop-up */
+.popup-content h2 {
+  margin: 0 0 15px 0;
+  font-family: "Chalkduster", cursive;
+  font-size: 24px;
+  color: #444;
+  text-shadow: 1px 1px 2px #fff6;
+}
+
+.popup-content p {
+  margin: 0 0 20px 0;
+  font-family: "Comic Sans MS", cursive;
+  font-size: 16px;
+  color: #333;
+}
+
+/* Botón cerrar del pop-up */
+#closePopup {
+  background: linear-gradient(135deg, #ffda47, #ffc107); 
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-family: inherit;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+}
+
+#closePopup:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+  background: linear-gradient(135deg, #6fbce0, #49a0cd);
+
+}
+
+/* ===================== NUEVA NOTA (POST-IT) ===================== */
+#new-note {
+  background: #fff89a;
+  border-radius: 8px;
+  width: 260px;
+  height: fit-content;
+  padding: 20px;
+  box-shadow: 4px 6px 12px rgba(0,0,0,0.3);
+  transform: rotate(-1.5deg);
+  font-family: "Comic Sans MS", cursive;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+#new-note h3 {
+  margin-top: 0;
+  text-align: center;
+  color: #444;
+  text-shadow: 1px 1px 0 #fff6;
+}
+
+/* Inputs y textarea */
+#new-note input,
+#new-note textarea {
+  width: 90%;
+  margin: 8px 0;
+  padding: 8px;
+  border: none;
+  border-radius: 6px;
+  background: #fffef3;
+  box-shadow: inset 1px 1px 3px rgba(0,0,0,0.2);
+  font-family: inherit;
+  font-size: 14px;
+  resize: none;
+  outline: none;
+}
+
+#new-note textarea {
+  height: 200px;
+}
+
+#new-note input:focus,
+#new-note textarea:focus {
+  box-shadow: 0 0 5px #ffda47;
+}
+
+/* Botón guardar nota */
+#saveNote {
+  background: linear-gradient(135deg, #ffda47, #ffc107);
+  border: none;
+  padding: 12px 0;
+  width: 95%;
+  margin-top: 10px;
+  border-radius: 10px;
+  font-family: inherit;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
+}
+
+#saveNote:hover {
+  background: linear-gradient(135deg, #ffd000, #ffc107);
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+/* Tachuela encima del post-it */
+#new-note::before {
+  content: "";
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 22px;
+  height: 22px;
+  background: url("pin.png") no-repeat center/contain;
+}
+
+/* ===================== TABLERO ===================== */
+#boardContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  min-height: calc(90vh - 110px); /* espacio mínimo para que el footer no suba */
+}
+
+#board {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 95%;
+  max-width: 1000px;
+  min-height: 500px;
+  background-color: #d4a373; /* color base corcho */
+  
+  /* textura de corcho */
+  background-image: url('assets/corcho.jpg'); /* tu archivo de corcho */
+  background-size: cover;   /* cubre todo el tablero */
+  background-repeat: no-repeat;
+  background-position: center;
+  
+  
+  padding: 30px;
+  border-radius: 15px;
+  border: 10px solid #8b5a2b;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3), inset 0 0 30px rgba(0,0,0,0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+
+#board h3 {
+  color: white;
+  font-family: 'Chalkduster', cursive;
+  text-shadow: 1px 1px 2px #000;
+}
+
+/* Contenedor de notas (grid 2x3) */
+#notesContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 220px);
+  grid-template-rows: repeat(2, 220px);
+  gap: 25px;
+  justify-content: center;
+  align-content: start;
+  overflow: hidden;
+  padding: 10px;
+  width: 100%;
+}
+
+/* ===================== NOTA INDIVIDUAL ===================== */
+.note {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  padding: 25px 15px 15px 15px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #fffeb3, #fff8a0);
+  border-radius: 8px;
+  box-shadow: 4px 4px 10px rgba(0,0,0,0.3), inset 0 -2px 2px rgba(0,0,0,0.1);
+  font-family: "Comic Sans MS", cursive;
+  transform: rotate(-2deg);
+  animation: dropNote 0.6s ease-out;
+  transform-origin: top center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.note h4 {
+  margin: 0 0 8px 0;
+  font-size: 24px;
+  font-weight: bold;
+  word-wrap: break-word;
+  color: #333;
+}
+
+.note p {
+  margin: 0;
+  word-wrap: break-word;
+}
+
+.note:hover {
+  transform: rotate(2deg);
+}
+
+/* Tachuela dentro de cada nota */
+.note .pin {
+  width: 24px;
+  height: 24px;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%) rotate(-5deg);
+  position: absolute;
+  pointer-events: auto; /* permitir click */
+  cursor: pointer;      /* cambia el cursor al pasar sobre la tachuela */
+  transition: transform 0.2s;
+}
+
+.note .pin:hover {
+  transform: translateX(-50%) rotate(-5deg) scale(1.2);
+}
+
+
+.note button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: linear-gradient(135deg, #ff6b6b, #ff4c4c); /* rojo degradado */
+  border: none;
+  padding: 5px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+  color: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+}
+
+.note button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+  background: linear-gradient(135deg, #ff4c4c, #ff1c1c);
+}
+
+
+/* ===================== NAVEGACIÓN ===================== */
+#boardNavigationContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#boardNavigation {
+  display: flex;
+  gap: 20px;
+}
+
+.board-arrow {
+  background: linear-gradient(135deg, #ffffff, #ffeaa7);
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.board-arrow:hover {
+  transform: scale(1.1);
+  box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+  background: linear-gradient(135deg, #fff9c4, #ffeaa7);
+}
+
+
+/* ===================== FOOTER ===================== */
+footer {
+  width: 95%;
+  max-width: 1000px;
+  margin: 20px auto 30px auto;
+  padding: 10px 0;
+  background: linear-gradient(145deg, #fff8b0, #fff1a8);
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2), inset 0 0 10px rgba(255,255,255,0.3);
+  text-align: center;
+  font-family: "Comic Sans MS", cursive;
+  color: #444;
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.footer-logo {
+    height: 100px; /* Ajusta el tamaño según necesites */
+    width: auto;
+}
+
+.footer-text p {
+    margin: 0;
+    color: black;
+    font-family: "Comic Sans MS", cursive;
+    font-size: 14px;
+}
+
+.footer-text a {
+    color: darkblue;
+    text-decoration:none;
+    transition: transform 0.2s;
+}
+
+.footer-text a:hover {
+    transform: scale(1.1);
+    color: #ffda47; /* cambio de color al pasar el mouse */
+}
+
+.github-icon {
+    width: 20px;
+    height: 20px;
+    transition: fill 0.2s;
+}
+
+
+/* ===================== ANIMACIONES ===================== */
+@keyframes dropNote {
+  0% {
+    transform: translateY(-50px) rotate(-5deg);
+    opacity: 0;
+  }
+  60% {
+    transform: translateY(10px) rotate(2deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+@keyframes popupAppear {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
